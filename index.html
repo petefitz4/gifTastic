@@ -6,22 +6,24 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<title>gifTastic</title>
+	<title>Animal Gifs</title>
 </head>
 <body>
-
 	<div class="container">
-		<div class="jumbotron">
-			<div class="row">
-			<div id = "wrapper">
-	
-			</div>
-			</div>
-		</div>
+	<!--display initial animal buttons that will call API for images of that animal when clicked-->
+	<div id="animalButtons"></div>
+	<!--display a search box to enter an animal-->
+	<!--display a submit button that will add another animal to the array of existing animal buttons-->
+	<form id="animal-form">
+		<label for="animal-input">Add an Animal</label>
+		<input type="text" id="animal-input"></form>
+		<input id="addAnimal" type="submit" value="Submit">
+	</form>
+
+	<div id="animals"></div>
 	</div>
 
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 
