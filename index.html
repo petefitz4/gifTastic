@@ -18,7 +18,8 @@
 	<!--display initial animal buttons that will call API for images of that animal when clicked-->
 		<br>
 		<div id="animalButtons"></div>
-		<button class="btn btn-default animal" data-name="Cat">Cat</button>
+		<button class="btn btn-default animal" style="background-color:aqua" data-name="Cat">Cat</button>
+		<button class="btn btn-default animal" style="background-color:aqua" data-name="Dog">Dog</button>
 		<br>
 		<!--div area where gifs-->	
 		<div id="animalgifs" style="float:left"></div>
@@ -27,7 +28,7 @@
 		<!--display a submit button that will add another animal to the array of existing animal buttons-->
 		<div style="float:right">
 			<form id="animal-form">				
-				<label for="animal-input">Add an Animal</label>
+				<label for="animal-input">Add an Animal</label><br>
 				<input type="text" id="animal-input"><br>	
 				<input id="addAnimal" type="submit" value="Add an Animal" style="background-color:green">
 		</div>

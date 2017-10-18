@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	console.log("ready");
 //array of buttons on html page. save to a variable called 'topics'
-	var topics = [" "];
+	var topics = ["Cat","Dog"];
 
 //function to re-render HTML to display buttons 
 	function displayAnimalGifs(){
@@ -23,21 +23,41 @@ $(document).ready(function(){
 	    	var results = response.data;
 
 //run a for loop to go through all 10 results listed in API call
-	    	for (var i=0; i <results.length; i++) {
+	    	//for (var i=0; i <results.length; i++) {
 
 //Store the API results for image rating
 		    	var rating = response.Rated;
 //Create an element to have the rating displayed
-				var pOne = $("<p>").text("Rating: " + results[i].rating);
+				//var pOne = $("<p>").text("Rating: " + results[i].rating);
+		    	var pOne = $("<p>").text("Rating: " + rating);
 		    	animalDiv.append(pOne);
 
 //Retrieve the URL for each image
-		    	var imgURL = response.data.image.fixed_height_still.url;
+		    	var imgStillURL = response.data.image.fixed_height_still.url;
+		    	var imageAnimateURL = response.date.image.fixed_height.url;
 //Create the element to hold the image		    	
-		    	var image = $("<img>").attr("src",results[i].imageURL);
+		    	//var image = $("<img>").attr("src",results[i].imageStillURL);
+		    	var image = $("<img>").attr("src", imageStillURL);
 //Append each image
 		    	animalDiv.append(image);
-		    }
+
+//when image of API call is clicked enable the giphy to animate//
+		//------CODE from pausing-gifs-solution--------//
+			//$(".gif").on("click", function() {
+			      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+			//var state = $(this).attr("data-state");
+			      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+			      // Then, set the image's data-state to animate
+			      // Else set src to the data-still value
+			//if (state === "still") {
+	        //$(this).attr("src", $(this).attr("data-animate"));
+	        //$(this).attr("data-state", "animate");
+	      	//} else {
+	        //$(this).attr("src", $(this).attr("data-still"));
+	        //$(this).attr("data-state", "still");
+	      	//}
+	    	//});
+		    
 		    });
 		}	
 
