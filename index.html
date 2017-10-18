@@ -6,26 +6,35 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<title>Animal Gifs</title>
+	<title>Topic Gifs</title>
+	
 </head>
 <body>
-	<div class="container">
-	<!--display initial animal buttons that will call API for images of that animal when clicked-->
-	<div id="animalButtons"></div>
-	<!--display a search box to enter an animal-->
-	<!--display a submit button that will add another animal to the array of existing animal buttons-->
-	<form id="animal-form">
-		<label for="animal-input">Add an Animal</label>
-		<input type="text" id="animal-input"></form>
-		<input id="addAnimal" type="submit" value="Submit">
-	</form>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<div id="animals"></div>
+	<div class="container">
+
+	<!--display initial animal buttons that will call API for images of that animal when clicked-->
+		<br>
+		<div id="animalButtons"></div>
+		<button class="btn btn-default animal" data-name="Cat">Cat</button>
+		<br>
+		<!--div area where gifs-->	
+		<div id="animalgifs" style="float:left"></div>
+
+		<!--display a search box to enter an animal-->
+		<!--display a submit button that will add another animal to the array of existing animal buttons-->
+		<div style="float:right">
+			<form id="animal-form">				
+				<label for="animal-input">Add an Animal</label>
+				<input type="text" id="animal-input"><br>	
+				<input id="addAnimal" type="submit" value="Add an Animal" style="background-color:green">
+		</div>
 	</div>
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="assets/javascript/app.js"></script>
-
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="assets/javascript/app2.js"></script>
+>
 </body>
 </html>
