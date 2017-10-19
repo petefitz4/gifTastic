@@ -5,44 +5,85 @@ $(document).ready(function(){
 
 //function to re-render HTML to display buttons 
 	function displayAnimalGifs(){
-
-//query the API for the animal entered in search box 
+		// console.log("hi pete you clicked the button congrats");
+		//query the API for the animal entered in search box 
 		var animal = $(this).attr("data-name");
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=5ORhLA6yFlPWQQjvuxqii6agBpcSG47G&limit=10";
 
-		console.log(this);
-// Creating an AJAX call for the specific movie button being clicked
+		// console.log(this);
+		// Creating an AJAX call for the specific movie button being clicked
 		$.ajax({
 			url: queryURL,
 	    	method: "GET"
 	    }).done(function(response) {
 	     	console.log(response);
-// Creating a div to hold the animal results from the API call
+
+			// Creating a div to hold the animal results from the API call
 		    var animalDiv = $("<div class='animal'>");
-// create a variable to store all results from the API call	    	
+			// create a variable to store all results from the API call	    	
 	    	var results = response.data;
 
-//run a for loop to go through all 10 results listed in API call
+	    	for(var i = 0; i < results.length; i++) {
+
+	    		console.log(results[i].rating);
+
+	    		// //get the still image url
+		    	var imgStillURL	= results[i].images.fixed_height_still.url;
+
+	    		// // use jQuery to create a div to hold this image and rating
+	    		var thisResultDiv = $('<div>');
+
+	    		// rating	    		
+	    		var thisRating = results[i].rating
+  				var ratingDiv = $("<p>").text("Rating: " + thisRating);
+
+  				// image
+  				var imageElement = $("<img>");
+  				// below: set image src to be imgStill URL
+
+  		    	
+  				// append ratingDiv to thisResultDiv
+
+
+  				// append imageElement to thisResultDiv
+
+
+  				// append thisResultDiv to the DOM
+
+
+
+	    	}
+
+
+
+
+
+
+
+
+
+
+			//run a for loop to go through all 10 results listed in API call
 	    	//for (var i=0; i <results.length; i++) {
 
-//Store the API results for image rating
-		    	var rating = response.Rated;
-//Create an element to have the rating displayed
-				//var pOne = $("<p>").text("Rating: " + results[i].rating);
-		    	var pOne = $("<p>").text("Rating: " + rating);
-		    	animalDiv.append(pOne);
+			//Store the API results for image rating
+	    	var rating = response.Rated;
+			//Create an element to have the rating displayed
+			//var pOne = $("<p>").text("Rating: " + results[i].rating);
+	    	var pOne = $("<p>").text("Rating: " + rating);
+	    	animalDiv.append(pOne);
 
-//Retrieve the URL for each image
-		    	var imgStillURL = response.data.image.fixed_height_still.url;
-		    	var imageAnimateURL = response.date.image.fixed_height.url;
-//Create the element to hold the image		    	
-		    	//var image = $("<img>").attr("src",results[i].imageStillURL);
-		    	var image = $("<img>").attr("src", imageStillURL);
-//Append each image
-		    	animalDiv.append(image);
+			//Retrieve the URL for each image
+	    	var imgStillURL = response.data.image.fixed_height_still.url;
+	    	var imageAnimateURL = response.data.image.fixed_height.url;
+			//Create the element to hold the image		    	
+	    	//var image = $("<img>").attr("src",results[i].imageStillURL);
+	    	var image = $("<img>").attr("src", imageStillURL);
+			//Append each image
+	    	animalDiv.append(image);
 
-//when image of API call is clicked enable the giphy to animate//
-		//------CODE from pausing-gifs-solution--------//
+			//when image of API call is clicked enable the giphy to animate//
+			//------CODE from pausing-gifs-solution--------//
 			//$(".gif").on("click", function() {
 			      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
 			//var state = $(this).attr("data-state");
@@ -58,8 +99,8 @@ $(document).ready(function(){
 	      	//}
 	    	//});
 		    
-		    });
-		}	
+		});
+	} // displayAnimalGifs()	
 
 //Function for displaying animal buttons	
 	function renderButtons(){
